@@ -29,7 +29,7 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 
 ## Installation
 
-Through [NPM](https://www.npmjs.com) as [@chubbyjs/chubbyjs-http][1].
+Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-http][1].
 
 ```ts
 npm i @chubbyts/chubbyts-http
