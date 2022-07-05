@@ -2,7 +2,7 @@ import { describe, expect, test } from '@jest/globals';
 import { randomBytes } from 'crypto';
 import { createReadStream, unlinkSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
-import { Stream } from 'stream';
+import { PassThrough, Stream } from 'stream';
 import {
   createUriFactory,
   createStreamFactory,
@@ -159,19 +159,32 @@ describe('message-factory', () => {
     expect(await readStream(stream)).toBe('test');
   });
 
-  test('createStreamFromResourceFactory', async () => {
-    const filename = tmpdir() + '/' + randomBytes(8).toString('hex');
+  describe('createStreamFromResourceFactory', () => {
+    test('with file PassThrough', async () => {
+      const existingStream = new PassThrough();
+      existingStream.write('test');
+      existingStream.end();
 
-    writeFileSync(filename, 'test');
+      const streamFactory = createStreamFromResourceFactory();
+      const stream = streamFactory(existingStream);
 
-    const existingStream = createReadStream(filename);
+      expect(await readStream(stream)).toBe('test');
+    });
 
-    const streamFactory = createStreamFromResourceFactory();
-    const stream = streamFactory(existingStream);
+    test('with file stream', async () => {
+      const filename = tmpdir() + '/' + randomBytes(8).toString('hex');
 
-    expect(await readStream(stream)).toBe('test');
+      writeFileSync(filename, 'test');
 
-    unlinkSync(filename);
+      const existingStream = createReadStream(filename);
+
+      const streamFactory = createStreamFromResourceFactory();
+      const stream = streamFactory(existingStream);
+
+      expect(await readStream(stream)).toBe('test');
+
+      unlinkSync(filename);
+    });
   });
 
   describe('createStreamFromFileFactory', () => {
