@@ -25,7 +25,7 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 
  * node: 14
  * [chubbyts/chubbyts-http-types][3]: ^1.0.0
- * [qs][4]: ^6.10.3
+ * [qs][4]: ^6.11.0
 
 ## Installation
 

@@ -31,12 +31,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://localhost')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/",
           "port": undefined,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "",
         }
@@ -47,12 +47,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://localhost:10443')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/",
           "port": 10443,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "",
         }
@@ -63,12 +63,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://user@localhost:10443')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/",
           "port": 10443,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "user",
         }
@@ -79,12 +79,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://user:password@localhost:10443')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/",
           "port": 10443,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "user:password",
         }
@@ -95,12 +95,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://user:password@localhost:10443/api')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/api",
           "port": 10443,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "user:password",
         }
@@ -112,17 +112,17 @@ describe('message-factory', () => {
 
       expect(uriFactory('https://user:password@localhost:10443/api?key1=value1&key2[]=value2&key3[key31]=value3'))
         .toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "",
           "host": "localhost",
           "path": "/api",
           "port": 10443,
-          "query": Object {
+          "query": {
             "key1": "value1",
-            "key2": Array [
+            "key2": [
               "value2",
             ],
-            "key3": Object {
+            "key3": {
               "key31": "value3",
             },
           },
@@ -136,12 +136,12 @@ describe('message-factory', () => {
       const uriFactory = createUriFactory();
 
       expect(uriFactory('https://user:password@localhost:10443/api?key=value#key=value')).toMatchInlineSnapshot(`
-        Object {
+        {
           "fragment": "key=value",
           "host": "localhost",
           "path": "/api",
           "port": 10443,
-          "query": Object {
+          "query": {
             "key": "value",
           },
           "schema": "https",
@@ -224,16 +224,16 @@ describe('message-factory', () => {
       expect(await readStream(body)).toBe('');
 
       expect(rest).toMatchInlineSnapshot(`
-        Object {
-          "headers": Object {},
+        {
+          "headers": {},
           "method": "GET",
           "protocolVersion": "1.0",
-          "uri": Object {
+          "uri": {
             "fragment": "",
             "host": "localhost",
             "path": "/api",
             "port": 10443,
-            "query": Object {},
+            "query": {},
             "schema": "https",
             "userInfo": "",
           },
@@ -250,16 +250,16 @@ describe('message-factory', () => {
       expect(body).toBeInstanceOf(Stream);
 
       expect(rest).toMatchInlineSnapshot(`
-        Object {
-          "headers": Object {},
+        {
+          "headers": {},
           "method": "GET",
           "protocolVersion": "1.0",
-          "uri": Object {
+          "uri": {
             "fragment": "",
             "host": "localhost",
             "path": "/api",
             "port": 10443,
-            "query": Object {},
+            "query": {},
             "schema": "https",
             "userInfo": "",
           },
@@ -277,17 +277,17 @@ describe('message-factory', () => {
     expect(body).toBeInstanceOf(Stream);
 
     expect(rest).toMatchInlineSnapshot(`
-      Object {
-        "attributes": Object {},
-        "headers": Object {},
+      {
+        "attributes": {},
+        "headers": {},
         "method": "GET",
         "protocolVersion": "1.0",
-        "uri": Object {
+        "uri": {
           "fragment": "",
           "host": "localhost",
           "path": "/api",
           "port": 10443,
-          "query": Object {},
+          "query": {},
           "schema": "https",
           "userInfo": "",
         },
@@ -386,8 +386,8 @@ describe('message-factory', () => {
       expect(await readStream(body)).toBe('');
 
       expect(rest).toMatchInlineSnapshot(`
-        Object {
-          "headers": Object {},
+        {
+          "headers": {},
           "protocolVersion": "1.0",
           "reasonPhrase": "Not Found",
           "status": 404,
@@ -404,8 +404,8 @@ describe('message-factory', () => {
       expect(body).toBeInstanceOf(Stream);
 
       expect(rest).toMatchInlineSnapshot(`
-        Object {
-          "headers": Object {},
+        {
+          "headers": {},
           "protocolVersion": "1.0",
           "reasonPhrase": "",
           "status": 600,
@@ -422,8 +422,8 @@ describe('message-factory', () => {
       expect(body).toBeInstanceOf(Stream);
 
       expect(rest).toMatchInlineSnapshot(`
-        Object {
-          "headers": Object {},
+        {
+          "headers": {},
           "protocolVersion": "1.0",
           "reasonPhrase": "Not Found???!!!",
           "status": 404,
