@@ -1,8 +1,9 @@
-import { describe, expect, test } from '@jest/globals';
 import { randomBytes } from 'crypto';
 import { createReadStream, unlinkSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { PassThrough, Stream } from 'stream';
+import { describe, expect, test } from '@jest/globals';
+import { Method } from '@chubbyts/chubbyts-http-types/dist/message';
 import {
   createUriFactory,
   createStreamFactory,
@@ -13,10 +14,10 @@ import {
   createResponseFactory,
   statusCodeMap,
 } from '../src/message-factory';
-import { Method } from '@chubbyts/chubbyts-http-types/dist/message';
 
 const readStream = async (stream: Stream) => {
   return new Promise((resolve, reject) => {
+    // eslint-disable-next-line functional/no-let
     let data = '';
 
     stream.on('data', (chunk) => (data += chunk));

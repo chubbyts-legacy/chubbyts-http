@@ -1,7 +1,8 @@
 import { createReadStream, existsSync } from 'fs';
-import { Duplex, PassThrough, Stream } from 'stream';
-import { Method, Query, Request, Response, ServerRequest, Uri } from '@chubbyts/chubbyts-http-types/dist/message';
-import {
+import type { Duplex, Stream } from 'stream';
+import { PassThrough } from 'stream';
+import type { Method, Query, Request, Response, ServerRequest, Uri } from '@chubbyts/chubbyts-http-types/dist/message';
+import type {
   RequestFactory,
   ResponseFactory,
   ServerRequestFactory,
