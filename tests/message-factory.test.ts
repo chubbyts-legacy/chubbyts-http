@@ -2,7 +2,7 @@ import { randomBytes } from 'crypto';
 import { createReadStream, unlinkSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { PassThrough, Stream } from 'stream';
-import { describe, expect, test } from '@jest/globals';
+import { describe, expect, test } from 'vitest';
 import { Method } from '@chubbyts/chubbyts-http-types/dist/message';
 import {
   createUriFactory,
