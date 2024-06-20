@@ -22,7 +22,7 @@ const readStream = async (stream: Stream) => {
 
     stream.on('data', (chunk) => (data += chunk));
     stream.on('end', () => resolve(data));
-    stream.on('error', (error) => reject(error));
+    stream.on('error', reject);
   });
 };
 
