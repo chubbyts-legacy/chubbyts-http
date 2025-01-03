@@ -23,21 +23,21 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 
 ## Requirements
 
- * node: 16
- * [chubbyts/chubbyts-http-types][3]: ^1.2.3
- * [qs][4]: ^6.11.1
+ * node: 18
+ * [chubbyts/chubbyts-http-types][3]: ^1.3.0
+ * [qs][4]: ^6.13.1
 
 ## Installation
 
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-http][1].
 
 ```ts
-npm i @chubbyts/chubbyts-http@^1.2.1
+npm i @chubbyts/chubbyts-http@^1.3.0
 ```
 
 ## Copyright
 
-2024 Dominik Zogg
+2025 Dominik Zogg
 
 [1]: https://www.npmjs.com/package/@chubbyts/chubbyts-http
 [2]: https://www.php-fig.org/psr/psr-15
