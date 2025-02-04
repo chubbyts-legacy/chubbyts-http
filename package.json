@@ -1,7 +1,7 @@
 {
   "name": "@chubbyts/chubbyts-http",
   "type": "module",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "description": "Http Request/Response with middleware and handler, PSR-15 inspired.",
   "keywords": [
     "chubbyts",
@@ -46,8 +46,8 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@chubbyts/chubbyts-http-types": "^1.3.1",
-    "qs": "^6.13.1"
+    "@chubbyts/chubbyts-http-types": "^1.3.1 || ^2.0.0",
+    "qs": "^6.14.0"
   },
   "devDependencies": {
     "@chubbyts/chubbyts-eslint": "^3.0.3",
