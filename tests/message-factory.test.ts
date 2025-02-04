@@ -3,7 +3,6 @@ import { createReadStream, unlinkSync, writeFileSync } from 'fs';
 import { tmpdir } from 'os';
 import { PassThrough, Stream } from 'stream';
 import { describe, expect, test } from 'vitest';
-import { Method } from '@chubbyts/chubbyts-http-types/dist/message';
 import {
   createUriFactory,
   createStreamFactory,
@@ -214,7 +213,7 @@ describe('message-factory', () => {
   describe('createRequestFactory', () => {
     test('with uri as string', async () => {
       const requestFactory = createRequestFactory();
-      const request = requestFactory(Method.GET, 'https://localhost:10443/api');
+      const request = requestFactory('GET', 'https://localhost:10443/api');
 
       const { body, ...rest } = request;
 
@@ -244,7 +243,7 @@ describe('message-factory', () => {
 
     test('with uri as object', () => {
       const requestFactory = createRequestFactory();
-      const request = requestFactory(Method.GET, createUriFactory()('https://localhost:10443/api'));
+      const request = requestFactory('GET', createUriFactory()('https://localhost:10443/api'));
 
       const { body, ...rest } = request;
 
@@ -271,7 +270,7 @@ describe('message-factory', () => {
 
   test('createServerRequestFactory', () => {
     const serverRequestFactory = createServerRequestFactory();
-    const serverRequest = serverRequestFactory(Method.GET, 'https://localhost:10443/api');
+    const serverRequest = serverRequestFactory('GET', 'https://localhost:10443/api');
 
     const { body, ...rest } = serverRequest;
 
