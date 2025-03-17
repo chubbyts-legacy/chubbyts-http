@@ -24,7 +24,7 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 ## Requirements
 
  * node: 18
- * [chubbyts/chubbyts-http-types][3]: ^1.3.1 || ^2.0.0
+ * [chubbyts/chubbyts-http-types][3]: ^2.1.0
  * [qs][4]: ^6.14.0
 
 ## Installation
@@ -32,7 +32,7 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-http][1].
 
 ```ts
-npm i @chubbyts/chubbyts-http@^1.4.0
+npm i @chubbyts/chubbyts-http@^1.5.0
 ```
 
 ## Copyright
