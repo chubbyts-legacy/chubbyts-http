@@ -1,7 +1,7 @@
 {
   "name": "@chubbyts/chubbyts-http",
   "type": "module",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "Http Request/Response with middleware and handler, PSR-15 inspired.",
   "keywords": [
     "chubbyts",
@@ -16,11 +16,11 @@
   "license": "MIT",
   "repository": "chubbyts/chubbyts-http",
   "scripts": {
-    "build": "node ./build.mjs",
+    "build": "tsc",
     "cs-fix": "prettier --write src tests",
     "cs": "prettier --check src tests",
     "infection": "stryker run",
-    "lint-fix": "eslint src tests eslint.config.mjs vitest.config.ts --fix",
+    "lint-fix": "eslint src tests eslint.config.js vitest.config.ts --fix",
     "lint": "eslint src tests",
     "prepare": "npm run build",
     "test": "vitest"
@@ -37,29 +37,27 @@
   "exports": {
     "./*": {
       "types": "./*.d.ts",
-      "require": "./*.cjs",
-      "import": "./*.mjs",
-      "default": "./*.mjs"
+      "import": "./*.js",
+      "default": "./*.js"
     }
   },
   "engines": {
     "node": ">=18"
   },
   "dependencies": {
-    "@chubbyts/chubbyts-http-types": "^2.1.0",
+    "@chubbyts/chubbyts-http-types": "^3.0.0",
     "qs": "^6.14.0"
   },
   "devDependencies": {
-    "@chubbyts/chubbyts-eslint": "^3.0.4",
-    "@chubbyts/chubbyts-packaging": "^4.0.0",
-    "@stryker-mutator/core": "^8.7.1",
-    "@stryker-mutator/vitest-runner": "^8.7.1",
-    "@types/node": "^22.13.1",
-    "@types/qs": "^6.9.18",
-    "@vitest/coverage-v8": "^3.0.5",
-    "prettier": "^3.4.2",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
+    "@chubbyts/chubbyts-eslint": "^4.0.2",
+    "@stryker-mutator/core": "^9.0.1",
+    "@stryker-mutator/vitest-runner": "^9.0.1",
+    "@types/node": "^24.0.1",
+    "@types/qs": "^6.14.0",
+    "@vitest/coverage-v8": "^3.2.3",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
   },
   "publishConfig": {
     "access": "public"
