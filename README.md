@@ -32,7 +32,7 @@ Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 Through [NPM](https://www.npmjs.com) as [@chubbyts/chubbyts-http][1].
 
 ```ts
-npm i @chubbyts/chubbyts-http@^3.0.0
+npm i @chubbyts/chubbyts-http@^2.0.1
 ```
 
 ## Copyright
