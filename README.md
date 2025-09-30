@@ -17,9 +17,9 @@
 [![sqale_index](https://sonarcloud.io/api/project_badges/measure?project=chubbyts_chubbyts-http&metric=sqale_index)](https://sonarcloud.io/dashboard?id=chubbyts_chubbyts-http)
 [![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=chubbyts_chubbyts-http&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=chubbyts_chubbyts-http)
 
-## Description
-
 **Deprecated: @chubbyts/chubbyts-http is replaced by@chubbyts/chubbyts-undici-server.**
+
+## Description
 
 Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 
