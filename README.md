@@ -19,7 +19,7 @@
 
 ## Description
 
-**Deperecated**: @chubbyts/chubbyts-http is replaced by@chubbyts/chubbyts-undici-server.
+**Deprecated: @chubbyts/chubbyts-http is replaced by@chubbyts/chubbyts-undici-server.**
 
 Http Request/Response with middleware and handler, [PSR-15][2] inspired.
 
